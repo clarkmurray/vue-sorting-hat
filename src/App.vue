@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="https://www.hp-lexicon.org/wp-content/uploads/2016/09/the_sorting_hat_by_sahinduezguen-d47mwt5.png" />
+    <img src="./assets/sorting-hat.png" />
    <house></house>
 
   </div>
