@@ -16,7 +16,7 @@
 				<div class="col-md-7">
 					<p class="text-left">{{Houses[this.randomHouse].description}}</p>
 					<div class="buttonDiv">
-					<button id="resort" v-on:click="sortAgain">Sort Again</button>
+					<button id="resort" v-on:click="initialSort">Sort Again</button>
 					</div>
 				</div>
 			</div>
@@ -61,7 +61,9 @@
 
 		  alreadySorted: false,
 
-		  headMSG: "Vue Sorting Hat"
+		  headMSG: "Vue Sorting Hat",
+
+		  sortingTime: Math.floor((Math.random() * 30000) + 1)
 		}
 	},
 
@@ -69,12 +71,15 @@
 		sortAgain: function() {
 			this.alreadySorted = true;
 			this.randomHouse = Math.floor(Math.random() * 4);
+			this.sortingTime = Math.floor((Math.random() * 30000) + 1);
 
 		},
 
 		initialSort: function() {
+			this.alreadySorted = false;
 			this.headMSG = "Hmmm...let me think...";
-			setTimeout(function() {this.sortAgain()}.bind(this), 5000);
+			console.log(this.sortingTime/1000);
+			setTimeout(function() {this.sortAgain()}.bind(this), this.sortingTime);
 		}
 	},
 

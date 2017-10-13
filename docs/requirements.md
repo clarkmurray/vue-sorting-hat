@@ -22,9 +22,9 @@ At the minimum, use Vue, JavaScript, HTML, and CSS to complete this assignment.
 
 [x] Using Vue components, display a "Welcome to..." message and some basic information about that House.
 
-[ ] Style your application. It's okay to start with Bootstrap, but make at least some customizations above what the framework provides.
+[x] Style your application. It's okay to start with Bootstrap, but make at least some customizations above what the framework provides.
 
-[ ] Save your code in a public github repo.
+[x] Save your code in a public github repo.
 
 [ ] Push your finished code to Heroku.
 
