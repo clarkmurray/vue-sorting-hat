@@ -1,4 +1,4 @@
-###Sorting Hat
+### Sorting Hat
 
 This assignment is inspired by the Sorting Hat: a magic item that assigns first-year students at Hogwarts School of Witchcraft and Wizardry a place in the Gryffindor, Hufflepuff, Ravenclaw, or Slytherin Houses.
 

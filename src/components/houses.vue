@@ -2,6 +2,7 @@
 	<div class="house">
 		<h1>Welcome to {{Houses[this.randomHouse].name}}!!!</h1>
 		<p>{{Houses[this.randomHouse].description}}</p>
+		<button v-on:click="sortAgain">Sort Again</button>
 	</div>
 </template>
 
@@ -33,6 +34,11 @@
 		  ],
 
 		  randomHouse: Math.floor(Math.random() * 4)
+		}
+	},
+	methods: {
+		sortAgain: function() {
+			this.randomHouse = Math.floor(Math.random() * 4);
 		}
 	}
 	}
