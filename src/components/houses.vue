@@ -1,7 +1,7 @@
 <template>
 	<div class="house">
 		<div v-if="!alreadySorted" class="container">
-			<h1>Please Waited to Be Sorted</h1>
+			<h1>{{ headMSG }}</h1>
 			<img src="../assets/sorting-hat.png" />
 		</div>
 
@@ -59,16 +59,29 @@
 
 		  randomHouse: Math.floor(Math.random() * 4),
 
-		  alreadySorted: true
+		  alreadySorted: false,
+
+		  headMSG: "Vue Sorting Hat"
 		}
 	},
+
 	methods: {
 		sortAgain: function() {
 			this.alreadySorted = true;
 			this.randomHouse = Math.floor(Math.random() * 4);
 
+		},
+
+		initialSort: function() {
+			this.headMSG = "Hmmm...let me think...";
+			setTimeout(function() {this.sortAgain()}.bind(this), 5000);
 		}
+	},
+
+	mounted: function() {
+		this.initialSort()
 	}
+
 	}
 </script>
 
