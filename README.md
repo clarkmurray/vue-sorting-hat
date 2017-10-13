@@ -1,18 +1,3 @@
-# vue-sorting-hat
+# Vue Sorting Hat
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+The MVP is complete. I left off working on the sorting quiz, which can be found in the "dev" branch of the repo. I have implemented random questions and answer order, but have not yet figured out how to evaluate the form data.
