@@ -38,9 +38,9 @@ At the minimum, use Vue, JavaScript, HTML, and CSS to complete this assignment.
 
 [ ] Ask a random number of questions, 0 to 5, before the Sorting Hat decides. There are sample questions in the provided data file. Choose the House most often selected in the answers to these questions.
 
-[ ] Randomize the order of the questions so that Question 1 isn't the same for every user every time.
+[x] Randomize the order of the questions so that Question 1 isn't the same for every user every time.
 
-[ ] Randomize the order of the answers to each question so that a user can't choose 'A' all the time to deliberately place themselves in Gryffindor.
+[x] Randomize the order of the answers to each question so that a user can't choose 'A' all the time to deliberately place themselves in Gryffindor.
 
 [ ] Provide cryptic feedback from the Sorting Hat after every question, such as "That's interesting!" or "Really...!"
 

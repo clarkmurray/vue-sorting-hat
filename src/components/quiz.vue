@@ -2,13 +2,37 @@
 <div class="quiz">
 
 	<h1>Sorting Hat Quiz</h1>
+
 	<h3>{{Questions[rQ[0]].text}}</h3>
-	<input type="radio" name="question1" value="Questions[rQ[0]].answers[0].text">{{Questions[rA].answers[0].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[0]].answers[rA[0]].text">{{Questions[rQ[0]].answers[rA[0]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[0]].answers[rA[1]].text">{{Questions[rQ[0]].answers[rA[1]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[0]].answers[rA[2]].text">{{Questions[rQ[0]].answers[rA[2]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[0]].answers[rA[3]].text">{{Questions[rQ[0]].answers[rA[3]].text}}</input>
 
 	<h3>{{Questions[rQ[1]].text}}</h3>
+		<input type="radio" name="question1" value="Questions[rQ[1]].answers[rA[0]].text">{{Questions[rQ[1]].answers[rA[0]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[1]].answers[rA[1]].text">{{Questions[rQ[1]].answers[rA[1]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[1]].answers[rA[2]].text">{{Questions[rQ[1]].answers[rA[2]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[1]].answers[rA[3]].text">{{Questions[rQ[1]].answers[rA[3]].text}}</input>
+
+
 	<h3>{{Questions[rQ[2]].text}}</h3>
+		<input type="radio" name="question1" value="Questions[rQ[2]].answers[rA[0]].text">{{Questions[rQ[2]].answers[rA[0]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[2]].answers[rA[1]].text">{{Questions[rQ[2]].answers[rA[1]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[2]].answers[rA[2]].text">{{Questions[rQ[2]].answers[rA[2]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[2]].answers[rA[3]].text">{{Questions[rQ[2]].answers[rA[3]].text}}</input>
+
 	<h3>{{Questions[rQ[3]].text}}</h3>
+		<input type="radio" name="question1" value="Questions[rQ[3]].answers[rA[0]].text">{{Questions[rQ[3]].answers[rA[0]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[3]].answers[rA[1]].text">{{Questions[rQ[3]].answers[rA[1]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[3]].answers[rA[2]].text">{{Questions[rQ[3]].answers[rA[2]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[3]].answers[rA[3]].text">{{Questions[rQ[3]].answers[rA[3]].text}}</input>
+
 	<h3>{{Questions[rQ[4]].text}}</h3>
+		<input type="radio" name="question1" value="Questions[rQ[4]].answers[rA[0]].text">{{Questions[rQ[4]].answers[rA[0]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[4]].answers[rA[1]].text">{{Questions[rQ[4]].answers[rA[1]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[4]].answers[rA[2]].text">{{Questions[rQ[4]].answers[rA[2]].text}}</input>
+		<input type="radio" name="question1" value="Questions[rQ[4]].answers[rA[3]].text">{{Questions[rQ[4]].answers[rA[3]].text}}</input>
 
 </div>
 </template>
@@ -22,7 +46,7 @@
 
 				rQ: [0, 1, 2, 3, 4],
 
-				rA: Math.floor(Math.random() * 4),
+				rA: [0, 1, 2, 3],
 
 				'Questions': [
 
@@ -143,11 +167,16 @@
 		methods: {
 			randomizeQuestions : function() {
 				this.rQ = this.rQ.sort(function() { return 0.4 - Math.random() });
+			},
+
+			randomizeAnswers: function() {
+				this.rA = this.rA.sort(function() { return 0.3 - Math.random() });
 			}
 		},
 
 		mounted: function() {
 			this.randomizeQuestions();
+			this.randomizeAnswers();
 
 		}
 	}
