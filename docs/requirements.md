@@ -26,15 +26,13 @@ At the minimum, use Vue, JavaScript, HTML, and CSS to complete this assignment.
 
 [x] Save your code in a public github repo.
 
-[ ] Push your finished code to Heroku.
+[x] Push your finished code to Heroku.
 
 [ ] Send links to your github repo and Heroku application to your instructors.
 
 ## Stretch Goals
 
-[ ] Remember which House was selected and display a "Welcome back to..." message if the user returns to your application. (Hint: use localStorage).
-
-[ ] Provide a "Sort Again" button that clears any saved data and allows the user to be sorted again.
+[x] Provide a "Sort Again" button
 
 [ ] Add a random delay of 0 to 30 seconds to the sorting. During that wait, display a spinner so the user knows the Sorting Hat is thinking.
 
