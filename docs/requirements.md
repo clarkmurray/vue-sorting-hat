@@ -16,33 +16,20 @@ You may change the data file - adding, removing, or modifying data - but it shou
 
 At the minimum, use Vue, JavaScript, HTML, and CSS to complete this assignment.
 
-## MVP
 
-[x] Upon initial page load, randomly determine a Hogwarts House for the user. Use the data file provided, or a similar one of your own creation.
-
-[x] Using Vue components, display a "Welcome to..." message and some basic information about that House.
-
-[x] Style your application. It's okay to start with Bootstrap, but make at least some customizations above what the framework provides.
-
-[x] Save your code in a public github repo.
-
-[ ] Push your finished code to Heroku.
-
-[ ] Send links to your github repo and Heroku application to your instructors.
 
 ## Stretch Goals
 
-[ ] Remember which House was selected and display a "Welcome back to..." message if the user returns to your application. (Hint: use localStorage).
 
-[ ] Provide a "Sort Again" button that clears any saved data and allows the user to be sorted again.
+[x] Provide a "Sort Again" button
 
-[ ] Add a random delay of 0 to 30 seconds to the sorting. During that wait, display a spinner so the user knows the Sorting Hat is thinking.
+[~] Add a random delay of 0 to 30 seconds to the sorting. During that wait, display a spinner so the user knows the Sorting Hat is thinking.
 
-[ ] Ask a random number of questions, 0 to 5, before the Sorting Hat decides. There are sample questions in the provided data file. Choose the House most often selected in the answers to these questions.
+[ ] Choose the House most often selected in quiz answers to these questions.
 
-[ ] Randomize the order of the questions so that Question 1 isn't the same for every user every time.
+[x] Randomize the order of the questions so that Question 1 isn't the same for every user every time.
 
-[ ] Randomize the order of the answers to each question so that a user can't choose 'A' all the time to deliberately place themselves in Gryffindor.
+[x] Randomize the order of the answers to each question so that a user can't choose 'A' all the time to deliberately place themselves in Gryffindor.
 
 [ ] Provide cryptic feedback from the Sorting Hat after every question, such as "That's interesting!" or "Really...!"
 

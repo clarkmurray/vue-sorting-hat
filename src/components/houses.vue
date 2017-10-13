@@ -63,7 +63,7 @@
 
 		  headMSG: "Vue Sorting Hat",
 
-		  sortingTime: Math.floor((Math.random() * 30000) + 1),
+		  sortingTime: Math.floor((Math.random() * 5000) + 1),
 
 		  ellipsisLoad: ''
 		}
@@ -80,7 +80,6 @@
 		initialSort: function() {
 			this.alreadySorted = false;
 			this.headMSG = "Hmmm...let me think";
-			console.log(this.sortingTime/1000);
 			setTimeout(function() {this.sortAgain()}.bind(this), this.sortingTime);
 		}
 	},
