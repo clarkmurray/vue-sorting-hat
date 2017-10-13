@@ -32,8 +32,6 @@ At the minimum, use Vue, JavaScript, HTML, and CSS to complete this assignment.
 
 ## Stretch Goals
 
-[ ] Have fun with styling. Practice your CSS and do something really cool.
-
 [ ] Remember which House was selected and display a "Welcome back to..." message if the user returns to your application. (Hint: use localStorage).
 
 [ ] Provide a "Sort Again" button that clears any saved data and allows the user to be sorted again.
