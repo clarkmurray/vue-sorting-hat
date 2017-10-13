@@ -5,37 +5,39 @@
 
 	<form name="sortingQuiz">
 	<h3>{{Questions[rQ[0]].text}}</h3>
-		<label><input type="radio" name="question1" value="Questions[rQ[0]].answers[rA[0]].text">{{Questions[rQ[0]].answers[rA[0]].text}}</label>
-		<label><input type="radio" name="question1" value="Questions[rQ[0]].answers[rA[1]].text">{{Questions[rQ[0]].answers[rA[1]].text}}</input></label>
-		<label><input type="radio" name="question1" value="Questions[rQ[0]].answers[rA[2]].text">{{Questions[rQ[0]].answers[rA[2]].text}}</input></label>
-		<label><input type="radio" name="question1" value="Questions[rQ[0]].answers[rA[3]].text">{{Questions[rQ[0]].answers[rA[3]].text}}</input></label>
+		<label><input type="radio" name="question1" v-bind:value="Questions[rQ[0]].answers[rA[0]].house">{{Questions[rQ[0]].answers[rA[0]].text}}</label>
+		<label><input type="radio" name="question1" v-bind:value="Questions[rQ[0]].answers[rA[1]].house">{{Questions[rQ[0]].answers[rA[1]].text}}</input></label>
+		<label><input type="radio" name="question1" v-bind:value="Questions[rQ[0]].answers[rA[2]].house">{{Questions[rQ[0]].answers[rA[2]].text}}</input></label>
+		<label><input type="radio" name="question1" v-bind:value="Questions[rQ[0]].answers[rA[3]].house">{{Questions[rQ[0]].answers[rA[3]].text}}</input></label>
 
 	<h3>{{Questions[rQ[1]].text}}</h3>
-		<label><input type="radio" name="question2" value="Questions[rQ[1]].answers[rA[0]].text">{{Questions[rQ[1]].answers[rA[0]].text}}</label>
-		<label><input type="radio" name="question2" value="Questions[rQ[1]].answers[rA[1]].text">{{Questions[rQ[1]].answers[rA[1]].text}}</label>
-		<label><input type="radio" name="question2" value="Questions[rQ[1]].answers[rA[2]].text">{{Questions[rQ[1]].answers[rA[2]].text}}</label>
-		<label><input type="radio" name="question2" value="Questions[rQ[1]].answers[rA[3]].text">{{Questions[rQ[1]].answers[rA[3]].text}}</label>
+		<label><input type="radio" name="question2" v-bind:value="Questions[rQ[1]].answers[rA[0]].house">{{Questions[rQ[1]].answers[rA[0]].text}}</label>
+		<label><input type="radio" name="question2" v-bind:value="Questions[rQ[1]].answers[rA[1]].house">{{Questions[rQ[1]].answers[rA[1]].text}}</label>
+		<label><input type="radio" name="question2" v-bind:value="Questions[rQ[1]].answers[rA[2]].house">{{Questions[rQ[1]].answers[rA[2]].text}}</label>
+		<label><input type="radio" name="question2" v-bind:value="Questions[rQ[1]].answers[rA[3]].house">{{Questions[rQ[1]].answers[rA[3]].text}}</label>
 
 
 	<h3>{{Questions[rQ[2]].text}}</h3>
-		<label><input type="radio" name="question3" value="Questions[rQ[2]].answers[rA[0]].text">{{Questions[rQ[2]].answers[rA[0]].text}}</label>
-		<label><input type="radio" name="question3" value="Questions[rQ[2]].answers[rA[1]].text">{{Questions[rQ[2]].answers[rA[1]].text}}</label>
-		<label><input type="radio" name="question3" value="Questions[rQ[2]].answers[rA[2]].text">{{Questions[rQ[2]].answers[rA[2]].text}}</label>
-		<label><input type="radio" name="question3" value="Questions[rQ[2]].answers[rA[3]].text">{{Questions[rQ[2]].answers[rA[3]].text}}</label>
+		<label><input type="radio" name="question3" v-bind:value="Questions[rQ[2]].answers[rA[0]].house">{{Questions[rQ[2]].answers[rA[0]].text}}</label>
+		<label><input type="radio" name="question3" v-bind:value="Questions[rQ[2]].answers[rA[1]].house">{{Questions[rQ[2]].answers[rA[1]].text}}</label>
+		<label><input type="radio" name="question3" v-bind:value="Questions[rQ[2]].answers[rA[2]].house">{{Questions[rQ[2]].answers[rA[2]].text}}</label>
+		<label><input type="radio" name="question3" v-bind:value="Questions[rQ[2]].answers[rA[3]].house">{{Questions[rQ[2]].answers[rA[3]].text}}</label>
 
 	<h3>{{Questions[rQ[3]].text}}</h3>
-		<label><input type="radio" name="question4" value="Questions[rQ[3]].answers[rA[0]].text">{{Questions[rQ[3]].answers[rA[0]].text}}</label>
-		<label><input type="radio" name="question4" value="Questions[rQ[3]].answers[rA[1]].text">{{Questions[rQ[3]].answers[rA[1]].text}}</label>
-		<label><input type="radio" name="question4" value="Questions[rQ[3]].answers[rA[2]].text">{{Questions[rQ[3]].answers[rA[2]].text}}</label>
-		<label><input type="radio" name="question4" value="Questions[rQ[3]].answers[rA[3]].text">{{Questions[rQ[3]].answers[rA[3]].text}}</label>
+		<label><input type="radio" name="question4" v-bind:value="Questions[rQ[3]].answers[rA[0]].house">{{Questions[rQ[3]].answers[rA[0]].text}}</label>
+		<label><input type="radio" name="question4" v-bind:value="Questions[rQ[3]].answers[rA[1]].house">{{Questions[rQ[3]].answers[rA[1]].text}}</label>
+		<label><input type="radio" name="question4" v-bind:value="Questions[rQ[3]].answers[rA[2]].house">{{Questions[rQ[3]].answers[rA[2]].text}}</label>
+		<label><input type="radio" name="question4" v-bind:value="Questions[rQ[3]].answers[rA[3]].house">{{Questions[rQ[3]].answers[rA[3]].text}}</label>
 
 	<h3>{{Questions[rQ[4]].text}}</h3>
-		<label><input type="radio" name="question5" value="Questions[rQ[4]].answers[rA[0]].text">{{Questions[rQ[4]].answers[rA[0]].text}}</label>
-		<label><input type="radio" name="question5" value="Questions[rQ[4]].answers[rA[1]].text">{{Questions[rQ[4]].answers[rA[1]].text}}</label>
-		<label><input type="radio" name="question5" value="Questions[rQ[4]].answers[rA[2]].text">{{Questions[rQ[4]].answers[rA[2]].text}}</label>
-		<label><input type="radio" name="question5" value="Questions[rQ[4]].answers[rA[3]].text">{{Questions[rQ[4]].answers[rA[3]].text}}</label>
-		<input id="sortMe" type="submit" value="Get Sorted!" v-on:click="calculateAnswers"></input>
+		<label><input type="radio" name="question5" v-bind:value="Questions[rQ[4]].answers[rA[0]].house">{{Questions[rQ[4]].answers[rA[0]].text}}</label>
+		<label><input type="radio" name="question5" v-bind:value="Questions[rQ[4]].answers[rA[1]].house">{{Questions[rQ[4]].answers[rA[1]].text}}</label>
+		<label><input type="radio" name="question5" v-bind:value="Questions[rQ[4]].answers[rA[2]].house">{{Questions[rQ[4]].answers[rA[2]].text}}</label>
+		<label><input type="radio" name="question5" v-bind:value="Questions[rQ[4]].answers[rA[3]].house">{{Questions[rQ[4]].answers[rA[3]].text}}</label>
 	</form>
+
+			<button id="sortMe" v-on:click="calculateAnswers">Get Sorted!</button>
+
 
 </div>
 </div>
@@ -48,13 +50,13 @@
 		data: function() {
 			return {
 
-				Gryffindor: 0,
+				gryffindor: 0,
 
-				Hufflepuff: 0,
+				hufflepuff: 0,
 
-				Ravenclaw: 0,
+				ravenclaw: 0,
 
-				Slytherin: 0,
+				slytherin: 0,
 
 				rQ: [0, 1, 2, 3, 4],
 
@@ -186,6 +188,21 @@
 			},
 
 			calculateAnswers: function() {
+				var questionOne = document.getElementsByName('question1');
+				for (var i=0; i < questionOne.length; i++) {
+					if (questionOne[i].checked) {
+						if (questionOne[i].value === "Gryffindor") {
+							this.gryffindor++;
+						} else if (questionOne[i].value === "Hufflepuff") {
+							this.hufflepuff++;
+						} else if (questionOne[i].value === "Ravenclaw") {
+							this.ravenclaw++;
+						} else if (questionOne[i].value === "Slytherin") {
+							this.slytherin++;
+						}
+					}
+				}
+				console.log(this.gryffindor, this.hufflepuff, this.ravenclaw, this.slytherin);
 				
 			}
 		},
