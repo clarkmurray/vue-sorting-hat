@@ -63,7 +63,7 @@
 
 		  headMSG: "Vue Sorting Hat",
 
-		  sortingTime: Math.floor((Math.random() * 5000) + 1),
+		  sortingTime: Math.floor((Math.random() * 4000) + 1),
 
 		  ellipsisLoad: ''
 		}
@@ -73,7 +73,7 @@
 		sortAgain: function() {
 			this.alreadySorted = true;
 			this.randomHouse = Math.floor(Math.random() * 4);
-			this.sortingTime = Math.floor((Math.random() * 5000) + 1);
+			this.sortingTime = Math.floor((Math.random() * 4000) + 1);
 
 		},
 
