@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/sorting-hat.png" />
    <house></house>
-
   </div>
 </template>
 
