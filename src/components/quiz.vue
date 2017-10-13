@@ -188,17 +188,19 @@
 			},
 
 			calculateAnswers: function() {
-				var questionOne = document.getElementsByName('question1');
-				for (var i=0; i < questionOne.length; i++) {
-					if (questionOne[i].checked) {
-						if (questionOne[i].value === "Gryffindor") {
-							this.gryffindor++;
-						} else if (questionOne[i].value === "Hufflepuff") {
-							this.hufflepuff++;
-						} else if (questionOne[i].value === "Ravenclaw") {
-							this.ravenclaw++;
-						} else if (questionOne[i].value === "Slytherin") {
-							this.slytherin++;
+				for (var j=0; j <= 5; j++) {
+					var questionOne = document.getElementsByName('question' + j);
+					for (var i=0; i < questionOne.length; i++) {
+						if (questionOne[i].checked) {
+							if (questionOne[i].value === "Gryffindor") {
+								this.gryffindor++;
+							} else if (questionOne[i].value === "Hufflepuff") {
+								this.hufflepuff++;
+							} else if (questionOne[i].value === "Ravenclaw") {
+								this.ravenclaw++;
+							} else if (questionOne[i].value === "Slytherin") {
+								this.slytherin++;
+							}
 						}
 					}
 				}
