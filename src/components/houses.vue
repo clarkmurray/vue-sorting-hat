@@ -57,7 +57,7 @@
 
 		  ],
 
-		  randomHouse: Math.floor(Math.random() * 4),
+		  randomHouse: '',
 
 		  alreadySorted: false,
 

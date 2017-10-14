@@ -58,6 +58,8 @@
 
 				slytherin: 0,
 
+				houseChosen: '',
+
 				rQ: [0, 1, 2, 3, 4],
 
 				rA: [0, 1, 2, 3],
@@ -204,9 +206,25 @@
 						}
 					}
 				}
-				console.log(this.gryffindor, this.hufflepuff, this.ravenclaw, this.slytherin);
-				
-			}
+
+				var houseValues = [{name: "gryffindor", value: this.gryffindor}, {name: "hufflepuff", value: this.hufflepuff}, {name: "ravenclaw", value: this.ravenclaw}, {name: "slytherin", value: this.slytherin}];
+
+				houseValues.sort(function(a, b){
+   					return b.value - a.value;
+				});
+
+				var firstLetterOfHouse = houseValues[0].name.charAt(0).toUpperCase();
+
+				var houseWithoutFirstLetter = houseValues[0].name.slice(1);
+
+				this.houseChosen = firstLetterOfHouse + houseWithoutFirstLetter;
+
+				console.log(this.houseChosen);
+			
+
+
+			},
+
 		},
 
 		mounted: function() {
