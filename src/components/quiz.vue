@@ -40,7 +40,7 @@
 
 
 </div>
-<house v-if="changeComponent"></house>
+<house v-if="changeComponent" v-bind:houseIndex = "houseIndex"></house>
 </div>
 </template>
 
@@ -52,7 +52,6 @@
 	export default {
 		name: 'quiz',
 		components: { house },
-		props: [this.houseChosen],
 		data: function() {
 			return {
 
@@ -242,10 +241,10 @@
 			findHouse: function() {
 				for (var i=0; i < 4; i++) {
 					if (this.houseChosen === this.housesArray[i]) {
-						this.houseChosen = i;
+						this.houseIndex = i;
 					}
 				}
-				console.log("houseChosen: " + this.houseChosen);
+				console.log("houseIndex: " + this.houseIndex);
 			}
 
 		},
