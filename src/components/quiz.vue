@@ -40,7 +40,7 @@
 
 
 </div>
-<house v-if="changeComponent" v-bind:houseIndex = "houseIndex"></house>
+<house v-if="changeComponent" v-bind:houseIndex = "houseIndex" v-bind:changeComponent = "changeComponent"></house>
 </div>
 </template>
 
