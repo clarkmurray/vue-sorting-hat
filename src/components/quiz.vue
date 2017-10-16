@@ -1,6 +1,6 @@
 <template>
 <div class="quiz">
-	<div class="container">
+	<div v-if="!changeComponent" class="container">
 	<h1>Sorting Hat Quiz</h1>
 
 	<form name="sortingQuiz">
@@ -40,15 +40,23 @@
 
 
 </div>
+<house v-if="changeComponent"></house>
 </div>
 </template>
 
 
 <script>
+
+	import house from './houses.vue';
+
 	export default {
 		name: 'quiz',
+		components: { house },
+		props: [this.houseChosen],
 		data: function() {
 			return {
+
+				changeComponent: false,
 
 				gryffindor: 0,
 
@@ -57,6 +65,8 @@
 				ravenclaw: 0,
 
 				slytherin: 0,
+
+				housesArray: ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"],
 
 				houseChosen: '',
 
@@ -220,10 +230,23 @@
 				this.houseChosen = firstLetterOfHouse + houseWithoutFirstLetter;
 
 				console.log(this.houseChosen);
+
+				this.changeComponent = true;
+
+				this.findHouse();
 			
 
 
 			},
+
+			findHouse: function() {
+				for (var i=0; i < 4; i++) {
+					if (this.houseChosen === this.housesArray[i]) {
+						this.houseChosen = i;
+					}
+				}
+				console.log("houseChosen: " + this.houseChosen);
+			}
 
 		},
 
