@@ -20,8 +20,7 @@
 
 	methods: {
 		switchToHouse: function() {
-			this.$router.push('houses');
-
+			this.$router.push('/house');
 		},
 
 		sortingWait: function() {

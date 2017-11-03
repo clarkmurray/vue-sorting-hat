@@ -47,11 +47,10 @@
 
 <script>
 
-	import house from './houses.vue';
+	import Vue from 'vue';
 
 	export default {
 		name: 'quiz',
-		components: { house },
 		data: function() {
 			return {
 
@@ -226,9 +225,7 @@
 
 				this.houseChosen = firstLetterOfHouse + houseWithoutFirstLetter;
 
-				console.log(this.houseChosen);
-
-				this.changeComponent = true;
+				console.log( 'this.houseChosen: ' + this.houseChosen);
 
 				this.findHouse();
 			
@@ -242,7 +239,11 @@
 						this.houseIndex = i;
 					}
 				}
-				console.log("houseIndex: " + this.houseIndex);
+
+				Vue.prototype.$houseIndex= this.houseIndex;
+
+				console.log("quiz::findHouse::Vue.prototype.$houseIndex: " + Vue.prototype.$houseIndex);
+				console.log("quiz::findHouse::this.houseIndex: " + this.houseIndex);
 				this.$router.push('/sorting');
 			}
 
