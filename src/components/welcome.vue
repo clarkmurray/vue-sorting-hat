@@ -1,5 +1,8 @@
 <template>
 	<div id="welcome">
-		<p>This is the welcome screen</p>
+		<div class="container">
+			<p>This is the welcome screen</p>
+			<router-link to="/quiz">Take Quiz</router-link>
+		</div>
 	</div>
 </template>

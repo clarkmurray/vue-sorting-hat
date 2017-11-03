@@ -1,6 +1,6 @@
 <template>
 <div class="quiz">
-	<div v-if="!changeComponent" class="container">
+	<div class="container">
 	<h1>Sorting Hat Quiz</h1>
 
 	<form name="sortingQuiz">
@@ -40,8 +40,8 @@
 
 
 </div>
-<house v-if="changeComponent" v-bind:houseIndex = "houseIndex" v-bind:changeComponent = "changeComponent"></house>
 </div>
+
 </template>
 
 
@@ -54,8 +54,6 @@
 		components: { house },
 		data: function() {
 			return {
-
-				changeComponent: false,
 
 				gryffindor: 0,
 
@@ -245,6 +243,7 @@
 					}
 				}
 				console.log("houseIndex: " + this.houseIndex);
+				this.$router.push('/sorting');
 			}
 
 		},

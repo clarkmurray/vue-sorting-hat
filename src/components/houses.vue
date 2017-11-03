@@ -1,11 +1,6 @@
 <template>
 	<div class="house">
-		<div v-if="!alreadySorted" class="container">
-			<h1>{{ headMSG }}{{ ellipsisLoad }}</h1>
-			<img src="../assets/sorting-hat.png" />
-		</div>
-
-		<div  v-if ="alreadySorted" class="container">
+		<div class="container">
 			<div class="row text-center">
 				<h1>Welcome to {{Houses[houseIndex].name}}!!!</h1>
 			</div>
@@ -16,12 +11,12 @@
 				<div class="col-md-7">
 					<p class="text-left">{{Houses[houseIndex].description}}</p>
 					<div class="buttonDiv">
-					<button id="resort" v-on:click="initialSort">Sort Again</button>
+					<!-- <button id="resort" v-on:click="initialSort">Sort Again</button> -->
+					<button id="resort"><router-link to="/quiz">Sort Again</router-link></button>
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
 </template>
 
@@ -30,7 +25,7 @@
 
 	export default {
 	name: 'house',
-	props: ['houseIndex', 'changeComponent'],
+	props: ['houseIndex'],
 	data: function() {
 		return {
 			'Houses': [
@@ -59,36 +54,11 @@
 
 		  ],
 
-		  alreadySorted: false,
-
-		  headMSG: "Vue Sorting Hat",
-
-		  sortingTime: Math.floor((Math.random() * 5000) + 1),
-
-		  ellipsisLoad: ''
 		}
-	},
-
-	methods: {
-		sortAgain: function() {
-			this.alreadySorted = true;
-			this.sortingTime = Math.floor((Math.random() * 5000) + 1);
-
-		},
-
-		initialSort: function() {
-			this.alreadySorted = false;
-			this.headMSG = "Hmmm...let me think";
-			console.log(this.sortingTime/1000);
-			setTimeout(function() {this.sortAgain()}.bind(this), this.sortingTime);
-		}
-	},
-
-	mounted: function() {
-		this.initialSort()
 	}
 
 	}
+
 </script>
 
 <style>
