@@ -1,22 +1,22 @@
 <template>
   <div id="app">
-   <house></house>
+   <router-view></router-view>
   </div>
 </template>
 
 <script>
 
-import house from './components/houses.vue';
+// import house from './components/houses.vue';
 
-export default {
-  name: 'app',
-  components: { house},
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
+// export default {
+//   name: 'app',
+//   components: { house},
+//   data () {
+//     return {
+//       msg: 'Welcome to Your Vue.js App'
+//     }
+//   }
+// }
 </script>
 
 <style>
