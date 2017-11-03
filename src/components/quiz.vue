@@ -242,8 +242,6 @@
 
 				Vue.prototype.$houseIndex= this.houseIndex;
 
-				console.log("quiz::findHouse::Vue.prototype.$houseIndex: " + Vue.prototype.$houseIndex);
-				console.log("quiz::findHouse::this.houseIndex: " + this.houseIndex);
 				this.$router.push('/sorting');
 			}
 
