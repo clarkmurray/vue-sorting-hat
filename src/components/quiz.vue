@@ -225,8 +225,6 @@
 
 				this.houseChosen = firstLetterOfHouse + houseWithoutFirstLetter;
 
-				console.log( 'this.houseChosen: ' + this.houseChosen);
-
 				this.findHouse();
 			
 

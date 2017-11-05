@@ -4,21 +4,13 @@
   </div>
 </template>
 
+
 <script>
 
-import house from './components/houses.vue';
-import quiz from './components/quiz.vue';
-
 export default {
-  name: 'app',
-  components: { house, quiz },
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-  
+  name: 'app',  
 }
+
 </script>
 
 <style>
