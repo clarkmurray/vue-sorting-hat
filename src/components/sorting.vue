@@ -1,7 +1,7 @@
 <template>
 	<div id="sorting">
 		<div class="container">
-			<h1>Hmmm...Let me think<span class="loading"></span></h1>
+			<h1 class="loading">Hmmm...Let me think</h1>
 			<img src="../assets/sorting-hat.png" />
 		</div>
 	</div>
