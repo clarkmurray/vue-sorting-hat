@@ -13,8 +13,7 @@
 
 	data: function() {
 		return {
-			// sortingTime: Math.floor((Math.random() * 5000) + 1000),
-			sortingTime: 10000,
+			sortingTime: Math.floor((Math.random() * 5000))
 		}
 
 	},

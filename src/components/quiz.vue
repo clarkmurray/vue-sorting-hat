@@ -73,22 +73,22 @@
 				'Questions': [
 
 				    { 
-				      text: 'What is your favorite color?',
+				      text: 'What is your favorite natural science?',
 				      answers: [
 				        {
-				          text: 'Scarlet',
+				          text: 'Physics',
 				          house: 'Gryffindor'
 				        },
 				        {
-				          text: 'Yellow',
+				          text: 'Biology',
 				          house: 'Hufflepuff'
 				        },
 				        {
-				          text: 'Blue',
+				          text: 'Astronomy',
 				          house: 'Ravenclaw'
 				        },
 				        {
-				          text: 'Green',
+				          text: 'Chemistry',
 				          house: 'Slytherin'
 				        }
 				      ]
@@ -280,8 +280,14 @@
 	}
 
 	#sortMe {
-		display: block;
+		display: black;
+		text-align: center;
+		background-color: black;
+		border: none;
+		color: white;
+		padding: 10px;
 		margin: 30px auto;
+		
 	}
 
 </style>
