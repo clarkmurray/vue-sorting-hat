@@ -4,14 +4,13 @@
 			<div class="row text-center">
 				<h1>Welcome to {{ Houses[this.$houseIndex].name }}!!!</h1>
 			</div>
-			<div class="row flex-row">
+			<div class="row">
 				<div class="col-md-5 text-center">
 					<img v-bind:src="Houses[this.$houseIndex].crest" />
 				</div>
 				<div class="col-md-7">
 					<p class="text-left">{{Houses[this.$houseIndex].description}}</p>
 					<div class="buttonDiv">
-					<!-- <button id="resort" v-on:click="initialSort">Sort Again</button> -->
 					<button id="resort"><router-link to="/quiz">Sort Again</router-link></button>
 					</div>
 				</div>

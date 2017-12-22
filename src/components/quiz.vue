@@ -1,7 +1,11 @@
 <template>
 <div class="quiz">
 	<div class="container">
-	<h1>Sorting Hat Quiz</h1>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center">
+				<h1>Sorting Hat Quiz</h1>
+			</div>
+		</div>
 
 	<form name="sortingQuiz">
 	<h3>{{Questions[rQ[0]].text}}</h3>
@@ -36,7 +40,7 @@
 		<label><input type="radio" name="question5" v-bind:value="Questions[rQ[4]].answers[rA[3]].house">{{Questions[rQ[4]].answers[rA[3]].text}}</label>
 	</form>
 
-			<button id="sortMe" v-on:click="calculateAnswers">Get Sorted!</button>
+	<button id="sortMe" v-on:click="calculateAnswers">Get Sorted!</button>
 
 
 </div>
