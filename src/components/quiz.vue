@@ -7,45 +7,19 @@
 			</div>
 		</div>
 
-	<form name="sortingQuiz">
-	<h3>{{Questions[rQ[0]].text}}</h3>
-		<label><input type="radio" name="question1" v-bind:value="Questions[rQ[0]].answers[rA[0]].house">{{Questions[rQ[0]].answers[rA[0]].text}}</label>
-		<label><input type="radio" name="question1" v-bind:value="Questions[rQ[0]].answers[rA[1]].house">{{Questions[rQ[0]].answers[rA[1]].text}}</input></label>
-		<label><input type="radio" name="question1" v-bind:value="Questions[rQ[0]].answers[rA[2]].house">{{Questions[rQ[0]].answers[rA[2]].text}}</input></label>
-		<label><input type="radio" name="question1" v-bind:value="Questions[rQ[0]].answers[rA[3]].house">{{Questions[rQ[0]].answers[rA[3]].text}}</input></label>
+		<form name="sortingQuiz" v-on:submit="calculateAnswer(); return false;">
+			<fieldset v-for="(Question, index) in Questions">
+				<h3>{{Question.text}}</h3>
+				<label><input type="radio" :value="Question.answers[0].house" :name="'question' + index">{{ Question.answers[0].text }}</label>
+				<label><input type="radio" :value="Question.answers[1].house" :name="'question' + index">{{ Question.answers[1].text }}</label>
+				<label><input type="radio" :value="Question.answers[2].house" :name="'question' + index">{{ Question.answers[2].text }}</label>
+				<label><input type="radio" :value="Question.answers[3].house" :name="'question' + index">{{ Question.answers[3].text }}</label>
+			</fieldset>
+			<input type="submit" value="Get Sorted" id="sortMe">
+		</form>
 
-	<h3>{{Questions[rQ[1]].text}}</h3>
-		<label><input type="radio" name="question2" v-bind:value="Questions[rQ[1]].answers[rA[0]].house">{{Questions[rQ[1]].answers[rA[0]].text}}</label>
-		<label><input type="radio" name="question2" v-bind:value="Questions[rQ[1]].answers[rA[1]].house">{{Questions[rQ[1]].answers[rA[1]].text}}</label>
-		<label><input type="radio" name="question2" v-bind:value="Questions[rQ[1]].answers[rA[2]].house">{{Questions[rQ[1]].answers[rA[2]].text}}</label>
-		<label><input type="radio" name="question2" v-bind:value="Questions[rQ[1]].answers[rA[3]].house">{{Questions[rQ[1]].answers[rA[3]].text}}</label>
-
-
-	<h3>{{Questions[rQ[2]].text}}</h3>
-		<label><input type="radio" name="question3" v-bind:value="Questions[rQ[2]].answers[rA[0]].house">{{Questions[rQ[2]].answers[rA[0]].text}}</label>
-		<label><input type="radio" name="question3" v-bind:value="Questions[rQ[2]].answers[rA[1]].house">{{Questions[rQ[2]].answers[rA[1]].text}}</label>
-		<label><input type="radio" name="question3" v-bind:value="Questions[rQ[2]].answers[rA[2]].house">{{Questions[rQ[2]].answers[rA[2]].text}}</label>
-		<label><input type="radio" name="question3" v-bind:value="Questions[rQ[2]].answers[rA[3]].house">{{Questions[rQ[2]].answers[rA[3]].text}}</label>
-
-	<h3>{{Questions[rQ[3]].text}}</h3>
-		<label><input type="radio" name="question4" v-bind:value="Questions[rQ[3]].answers[rA[0]].house">{{Questions[rQ[3]].answers[rA[0]].text}}</label>
-		<label><input type="radio" name="question4" v-bind:value="Questions[rQ[3]].answers[rA[1]].house">{{Questions[rQ[3]].answers[rA[1]].text}}</label>
-		<label><input type="radio" name="question4" v-bind:value="Questions[rQ[3]].answers[rA[2]].house">{{Questions[rQ[3]].answers[rA[2]].text}}</label>
-		<label><input type="radio" name="question4" v-bind:value="Questions[rQ[3]].answers[rA[3]].house">{{Questions[rQ[3]].answers[rA[3]].text}}</label>
-
-	<h3>{{Questions[rQ[4]].text}}</h3>
-		<label><input type="radio" name="question5" v-bind:value="Questions[rQ[4]].answers[rA[0]].house">{{Questions[rQ[4]].answers[rA[0]].text}}</label>
-		<label><input type="radio" name="question5" v-bind:value="Questions[rQ[4]].answers[rA[1]].house">{{Questions[rQ[4]].answers[rA[1]].text}}</label>
-		<label><input type="radio" name="question5" v-bind:value="Questions[rQ[4]].answers[rA[2]].house">{{Questions[rQ[4]].answers[rA[2]].text}}</label>
-		<label><input type="radio" name="question5" v-bind:value="Questions[rQ[4]].answers[rA[3]].house">{{Questions[rQ[4]].answers[rA[3]].text}}</label>
-	</form>
-
-	<button id="sortMe" v-on:click="calculateAnswers">Get Sorted!</button>
-
-
+	</div>
 </div>
-</div>
-
 </template>
 
 
@@ -69,10 +43,6 @@
 				housesArray: ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"],
 
 				houseChosen: '',
-
-				rQ: [0, 1, 2, 3, 4],
-
-				rA: [0, 1, 2, 3],
 
 				'Questions': [
 
@@ -191,68 +161,85 @@
 		},
 
 		methods: {
-			randomizeQuestions : function() {
-				this.rQ = this.rQ.sort(function() { return 0.4 - Math.random() });
-			},
 
-			randomizeAnswers: function() {
-				this.rA = this.rA.sort(function() { return 0.3 - Math.random() });
-			},
-
-			calculateAnswers: function() {
-				for (var j=0; j <= 5; j++) {
-					var questionOne = document.getElementsByName('question' + j);
-					for (var i=0; i < questionOne.length; i++) {
-						if (questionOne[i].checked) {
-							if (questionOne[i].value === "Gryffindor") {
+			calculateAnswer: function() {
+				for (let i=0; i < 5; i++) {
+					let question = document.getElementsByName('question' + i);
+					for (let j=0; j < question.length; j++) {
+						if (question[j].checked) {
+							if (question[j].value === "Gryffindor") {
 								this.gryffindor++;
-							} else if (questionOne[i].value === "Hufflepuff") {
+							} else if (question[j].value ==="Hufflepuff") {
 								this.hufflepuff++;
-							} else if (questionOne[i].value === "Ravenclaw") {
+							} else if (question[j].value==="Ravenclaw") {
 								this.ravenclaw++;
-							} else if (questionOne[i].value === "Slytherin") {
+							} else if (question[j].value==="Slytherin") {
 								this.slytherin++;
 							}
 						}
 					}
 				}
 
-				var houseValues = [{name: "gryffindor", value: this.gryffindor}, {name: "hufflepuff", value: this.hufflepuff}, {name: "ravenclaw", value: this.ravenclaw}, {name: "slytherin", value: this.slytherin}];
+				alert("Gryffindor: " + this.gryffindor + ", Hufflepuff: " + this.hufflepuff + ", Ravenclaw: " + this.ravenclaw + ", Slytherin: " + this.slytherin);
+			},
 
-				houseValues.sort(function(a, b){
-   					return b.value - a.value;
-				});
+			randomizeQuestions: function(array) {
+				var currentIndex = array.length, temporaryValue, randomIndex;
 
-				var firstLetterOfHouse = houseValues[0].name.charAt(0).toUpperCase();
+				  // While there remain elements to shuffle...
+				while (0 !== currentIndex) {
 
-				var houseWithoutFirstLetter = houseValues[0].name.slice(1);
+				    // Pick a remaining element...
+				    randomIndex = Math.floor(Math.random() * currentIndex);
+				    currentIndex -= 1;
 
-				this.houseChosen = firstLetterOfHouse + houseWithoutFirstLetter;
+				    // And swap it with the current element.
+				    temporaryValue = array[currentIndex];
+				    array[currentIndex] = array[randomIndex];
+				    array[randomIndex] = temporaryValue;
+				}
 
-				this.findHouse();
+				return array;
+			}
+		},
+
+		// 		var houseValues = [{name: "gryffindor", value: this.gryffindor}, {name: "hufflepuff", value: this.hufflepuff}, {name: "ravenclaw", value: this.ravenclaw}, {name: "slytherin", value: this.slytherin}];
+
+		// 		houseValues.sort(function(a, b){
+  //  					return b.value - a.value;
+		// 		});
+
+		// 		var firstLetterOfHouse = houseValues[0].name.charAt(0).toUpperCase();
+
+		// 		var houseWithoutFirstLetter = houseValues[0].name.slice(1);
+
+		// 		this.houseChosen = firstLetterOfHouse + houseWithoutFirstLetter;
+
+		// 		this.findHouse();
 			
 
 
-			},
+		// 	},
 
-			findHouse: function() {
-				for (var i=0; i < 4; i++) {
-					if (this.houseChosen === this.housesArray[i]) {
-						this.houseIndex = i;
-					}
-				}
+		// 	findHouse: function() {
+		// 		for (var i=0; i < 4; i++) {
+		// 			if (this.houseChosen === this.housesArray[i]) {
+		// 				this.houseIndex = i;
+		// 			}
+		// 		}
 
-				Vue.prototype.$houseIndex= this.houseIndex;
+		// 		Vue.prototype.$houseIndex= this.houseIndex;
 
-				this.$router.push('/sorting');
+		// 		this.$router.push('/sorting');
+		// 	}
+
+		// },
+
+		created: function() {
+			this.Questions = this.randomizeQuestions(this.Questions);
+			for (let i = 0; i < 4; i++) {
+				this.Questions[i].answers = this.randomizeQuestions(this.Questions[i].answers);
 			}
-
-		},
-
-		mounted: function() {
-			this.randomizeQuestions();
-			this.randomizeAnswers();
-
 		}
 	}
 </script>
@@ -263,7 +250,7 @@
 		background-image: url("../assets/parchment.jpg");
 	}
 
-	form > h3 {
+	fieldset > h3 {
 		margin-top: 30px;
 		margin-bottom: 20px;
 		text-align: left;
