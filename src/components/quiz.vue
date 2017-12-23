@@ -7,10 +7,10 @@
 			</div>
 		</div>
 
-		<form name="sortingQuiz" v-on:submit="calculateAnswer(); return false;">
+		<form name="sortingQuiz" v-on:submit="tallyAnswers(); return false;">
 			<fieldset v-for="(Question, index) in Questions">
 				<h3>{{Question.text}}</h3>
-				<label><input type="radio" :value="Question.answers[0].house" :name="'question' + index">{{ Question.answers[0].text }}</label>
+				<label><input type="radio" :value="Question.answers[0].house" :name="'question' + index" required>{{ Question.answers[0].text }}</label>
 				<label><input type="radio" :value="Question.answers[1].house" :name="'question' + index">{{ Question.answers[1].text }}</label>
 				<label><input type="radio" :value="Question.answers[2].house" :name="'question' + index">{{ Question.answers[2].text }}</label>
 				<label><input type="radio" :value="Question.answers[3].house" :name="'question' + index">{{ Question.answers[3].text }}</label>
@@ -32,15 +32,7 @@
 		data: function() {
 			return {
 
-				gryffindor: 0,
-
-				hufflepuff: 0,
-
-				ravenclaw: 0,
-
-				slytherin: 0,
-
-				housesArray: ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"],
+				houses: {'gryffindor' : 0, 'hufflepuff' : 0, 'ravenclaw' : 0, 'slytherin' : 0},
 
 				houseChosen: '',
 
@@ -162,38 +154,50 @@
 
 		methods: {
 
-			calculateAnswer: function() {
+			tallyAnswers: function() {
 				for (let i=0; i < 5; i++) {
 					let question = document.getElementsByName('question' + i);
 					for (let j=0; j < question.length; j++) {
 						if (question[j].checked) {
 							if (question[j].value === "Gryffindor") {
-								this.gryffindor++;
+								this.houses.gryffindor++;
 							} else if (question[j].value ==="Hufflepuff") {
-								this.hufflepuff++;
+								this.houses.hufflepuff++;
 							} else if (question[j].value==="Ravenclaw") {
-								this.ravenclaw++;
+								this.houses.ravenclaw++;
 							} else if (question[j].value==="Slytherin") {
-								this.slytherin++;
+								this.houses.slytherin++;
 							}
 						}
 					}
 				}
 
-				alert("Gryffindor: " + this.gryffindor + ", Hufflepuff: " + this.hufflepuff + ", Ravenclaw: " + this.ravenclaw + ", Slytherin: " + this.slytherin);
+				alert("Gryffindor: " + this.houses.gryffindor + ", Hufflepuff: " + this.houses.hufflepuff + ", Ravenclaw: " + this.houses.ravenclaw + ", Slytherin: " + this.houses.slytherin);
+
+				this.sortHouse();
+			},
+
+			sortHouse: function() {
+				let highest = 0;
+				for (let i = 0; i < 4; i++) {
+					// Loop through object keys to compare values
+					let value = this.houses[Object.keys(this.houses)[i]];
+					if (value > highest) {
+						highest = value;
+						this.houseChosen = [Object.keys(this.houses)[i]];
+					}
+				}
+				alert(this.houseChosen);
 			},
 
 			randomizeQuestions: function(array) {
 				var currentIndex = array.length, temporaryValue, randomIndex;
 
-				  // While there remain elements to shuffle...
 				while (0 !== currentIndex) {
 
-				    // Pick a remaining element...
 				    randomIndex = Math.floor(Math.random() * currentIndex);
 				    currentIndex -= 1;
 
-				    // And swap it with the current element.
 				    temporaryValue = array[currentIndex];
 				    array[currentIndex] = array[randomIndex];
 				    array[randomIndex] = temporaryValue;
@@ -202,24 +206,6 @@
 				return array;
 			}
 		},
-
-		// 		var houseValues = [{name: "gryffindor", value: this.gryffindor}, {name: "hufflepuff", value: this.hufflepuff}, {name: "ravenclaw", value: this.ravenclaw}, {name: "slytherin", value: this.slytherin}];
-
-		// 		houseValues.sort(function(a, b){
-  //  					return b.value - a.value;
-		// 		});
-
-		// 		var firstLetterOfHouse = houseValues[0].name.charAt(0).toUpperCase();
-
-		// 		var houseWithoutFirstLetter = houseValues[0].name.slice(1);
-
-		// 		this.houseChosen = firstLetterOfHouse + houseWithoutFirstLetter;
-
-		// 		this.findHouse();
-			
-
-
-		// 	},
 
 		// 	findHouse: function() {
 		// 		for (var i=0; i < 4; i++) {
