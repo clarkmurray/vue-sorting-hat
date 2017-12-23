@@ -50,37 +50,8 @@
 		      crest: "src/assets/slytherin.png"
 		    }
 
-<<<<<<< HEAD
-		  ],
-
-		  randomHouse: Math.floor(Math.random() * 4),
-
-		  alreadySorted: false,
-
-		  headMSG: "Vue Sorting Hat",
-
-		  sortingTime: Math.floor((Math.random() * 4000) + 1),
-
-		  ellipsisLoad: ''
-		}
-	},
-
-	methods: {
-		sortAgain: function() {
-			this.alreadySorted = true;
-			this.randomHouse = Math.floor(Math.random() * 4);
-			this.sortingTime = Math.floor((Math.random() * 4000) + 1);
-
-		},
-
-		initialSort: function() {
-			this.alreadySorted = false;
-			this.headMSG = "Hmmm...let me think";
-			setTimeout(function() {this.sortAgain()}.bind(this), this.sortingTime);
-=======
 		  ]
 
->>>>>>> dev
 		}
 	}
 
