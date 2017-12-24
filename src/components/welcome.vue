@@ -9,7 +9,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
-					<button id="takeQuiz"><router-link to="/quiz">Take Quiz</router-link></button>
+					<router-link to="/quiz"><button id="takeQuiz">Take Quiz</button></router-link>
 				</div>
 			</div>
 		</div>
@@ -24,12 +24,8 @@
 	padding: 10px;
 	border: none;
 	color: white;
-}
-
-#takeQuiz > a {
-	color: white;
 	text-decoration: none;
-
 }
+
 
 </style>

@@ -11,7 +11,7 @@
 				<div class="col-md-7">
 					<p class="text-left">{{Houses[houseChosen].description}}</p>
 					<div class="buttonDiv">
-					<button id="resort"><router-link to="/quiz">Sort Again</router-link></button>
+						<router-link to="/quiz"><button id="resort">Sort Again</button></router-link>
 					</div>
 				</div>
 			</div>
@@ -80,12 +80,8 @@
 		border: none;
 		padding: 10px;
 		margin-top: 30px;
-		
-	}
-
-	#resort > a, a:hover {
 		color: white;
-		text-decoration: none;
+		text-decoration: none;		
 	}
 
 	.row.flex-row {
