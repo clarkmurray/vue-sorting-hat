@@ -187,14 +187,21 @@
 			},
 
 			sortHouse: function() {
-				let highest = 0;
+				let highest = 1;
+				let h = 0;
 				for (let i = 0; i < 4; i++) {
 					let value = this.houses[Object.keys(this.houses)[i]];
 					if (value > highest) {
 						highest = value;
+						h = i;
 						this.houseChosen = i;
+					} else if (value === highest) {
+						let tie = [i, h];
+						this.randomizeQuestions(tie);
+						this.houseChosen = tie[0];
 					}
 				}
+
 				this.$router.push({ path: `/sorting/${this.houseChosen}` });
 			},
 
