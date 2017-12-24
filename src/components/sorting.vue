@@ -12,7 +12,7 @@
 	export default {
 	data: function() {
 		return {
-			sortingTime: Math.floor((Math.random() * 5000)),
+			sortingTime: 3,
 			houseChosen: this.$route.params.house
 		}
 
@@ -26,12 +26,19 @@
 		sortingWait: function() {
 			console.log(this.sortingTime/1000);
 			setTimeout(function() {this.switchToHouse()}.bind(this), this.sortingTime);
+		},
+
+		randomSortingTime: function(min, max) {
+			min = Math.ceil(min);
+  			max = Math.floor(max);
+  			this.sortingTime = Math.floor(Math.random() * (max - min + 1)) + min;
+  			return this.sortingTime = this.sortingTime * 1000;
 		}
 	},
 
 	mounted: function() {
-		this.sortingWait()
-		console.log(this.houseChosen);
+		this.randomSortingTime(3, 6);
+		this.sortingWait();
 	}
 
 	}
