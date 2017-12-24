@@ -7,7 +7,7 @@ export default [
 
 	{path: '/', component: welcome},
 	{path: '/quiz', component: quiz},
-	{path: '/sorting', component: sorting},
-	{path: '/house', component: houses}
+	{path: '/sorting/:house', component: sorting},
+	{path: '/house/:house', component: houses}
 
 ]

@@ -8,15 +8,26 @@
 		</div>
 
 		<form name="sortingQuiz" v-on:submit="tallyAnswers(); return false;">
-			<fieldset v-for="(Question, index) in Questions">
-				<h3>{{Question.text}}</h3>
-				<label><input type="radio" :value="Question.answers[0].house" :name="'question' + index" required>{{ Question.answers[0].text }}</label>
-				<label><input type="radio" :value="Question.answers[1].house" :name="'question' + index">{{ Question.answers[1].text }}</label>
-				<label><input type="radio" :value="Question.answers[2].house" :name="'question' + index">{{ Question.answers[2].text }}</label>
-				<label><input type="radio" :value="Question.answers[3].house" :name="'question' + index">{{ Question.answers[3].text }}</label>
-			</fieldset>
-			<input type="submit" value="Get Sorted" id="sortMe">
+			<div class="row">
+				<div class="col-md-8">
+					<fieldset v-for="(Question, index) in Questions">
+						<h3>{{Question.text}}</h3>
+						<label><input type="radio" :value="Question.answers[0].house" :name="'question' + index" required>{{ Question.answers[0].text }}</label>
+						<label><input type="radio" :value="Question.answers[1].house" :name="'question' + index">{{ Question.answers[1].text }}</label>
+						<label><input type="radio" :value="Question.answers[2].house" :name="'question' + index">{{ Question.answers[2].text }}</label>
+						<label><input type="radio" :value="Question.answers[3].house" :name="'question' + index">{{ Question.answers[3].text }}</label>
+					</fieldset>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<input type="submit" value="Get Sorted" id="sortMe">
+				</div>
+			</div>
 		</form>
+
+	</div>
+</div>
 
 	</div>
 </div>
@@ -34,7 +45,7 @@
 
 				houses: {'gryffindor' : 0, 'hufflepuff' : 0, 'ravenclaw' : 0, 'slytherin' : 0},
 
-				houseChosen: '',
+				houseChosen: 0,
 
 				'Questions': [
 
@@ -172,22 +183,19 @@
 					}
 				}
 
-				alert("Gryffindor: " + this.houses.gryffindor + ", Hufflepuff: " + this.houses.hufflepuff + ", Ravenclaw: " + this.houses.ravenclaw + ", Slytherin: " + this.houses.slytherin);
-
 				this.sortHouse();
 			},
 
 			sortHouse: function() {
 				let highest = 0;
 				for (let i = 0; i < 4; i++) {
-					// Loop through object keys to compare values
 					let value = this.houses[Object.keys(this.houses)[i]];
 					if (value > highest) {
 						highest = value;
-						this.houseChosen = [Object.keys(this.houses)[i]];
+						this.houseChosen = i;
 					}
 				}
-				alert(this.houseChosen);
+				this.$router.push({ path: `/sorting/${this.houseChosen}` });
 			},
 
 			randomizeQuestions: function(array) {
@@ -206,20 +214,6 @@
 				return array;
 			}
 		},
-
-		// 	findHouse: function() {
-		// 		for (var i=0; i < 4; i++) {
-		// 			if (this.houseChosen === this.housesArray[i]) {
-		// 				this.houseIndex = i;
-		// 			}
-		// 		}
-
-		// 		Vue.prototype.$houseIndex= this.houseIndex;
-
-		// 		this.$router.push('/sorting');
-		// 	}
-
-		// },
 
 		created: function() {
 			this.Questions = this.randomizeQuestions(this.Questions);

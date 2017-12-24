@@ -10,17 +10,17 @@
 <script>
 
 	export default {
-
 	data: function() {
 		return {
-			sortingTime: Math.floor((Math.random() * 5000))
+			sortingTime: Math.floor((Math.random() * 5000)),
+			houseChosen: this.$route.params.house
 		}
 
 	},
 
 	methods: {
 		switchToHouse: function() {
-			this.$router.push('/house');
+			this.$router.push({ path: `/house/${this.houseChosen}` });
 		},
 
 		sortingWait: function() {
@@ -31,6 +31,7 @@
 
 	mounted: function() {
 		this.sortingWait()
+		console.log(this.houseChosen);
 	}
 
 	}

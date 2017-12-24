@@ -9,9 +9,6 @@ const router = new VueRouter({
 	routes: Routes
 });
 
-
-Vue.prototype.$houseIndex = 0;
-
 new Vue({
   el: '#app',
   render: h => h(App),

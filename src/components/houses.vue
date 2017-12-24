@@ -2,14 +2,14 @@
 	<div class="house">
 		<div class="container">
 			<div class="row text-center">
-				<h1>Welcome to {{ Houses[this.$houseIndex].name }}!!!</h1>
+				<h1>Welcome to {{ Houses[houseChosen].name }}!!!</h1>
 			</div>
 			<div class="row">
 				<div class="col-md-5 text-center">
-					<img v-bind:src="Houses[this.$houseIndex].crest" />
+					<img v-bind:src="Houses[houseChosen].crest" />
 				</div>
 				<div class="col-md-7">
-					<p class="text-left">{{Houses[this.$houseIndex].description}}</p>
+					<p class="text-left">{{Houses[houseChosen].description}}</p>
 					<div class="buttonDiv">
 					<button id="resort"><router-link to="/quiz">Sort Again</router-link></button>
 					</div>
@@ -26,6 +26,7 @@
 	name: 'house',
 	data: function() {
 		return {
+			houseChosen: this.$route.params.house,
 			'Houses': [
 
 		    {
@@ -53,9 +54,9 @@
 		  ]
 
 		}
-	}
+	},
 
-	}
+}
 
 </script>
 
