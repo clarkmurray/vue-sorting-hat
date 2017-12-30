@@ -15,6 +15,10 @@ export default {
 
 <style>
 
+  html {
+    height: 100%;
+  }
+  
   body {
         background-image: url("./assets/parchment.jpg");
   }

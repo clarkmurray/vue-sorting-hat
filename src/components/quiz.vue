@@ -72,88 +72,88 @@
 				    },
 
 				    { 
-				      text: 'What is your favorite animal?',
+				      text: 'What is your favorite thing to do on the weekends?',
 				      answers: [
 				        {
-				          text: 'Lion',
+				          text: 'Go on a road trip',
 				          house: 'Gryffindor'
 				        },
 				        {
-				          text: 'Badger',
+				          text: 'Spend time with friends and family',
 				          house: 'Hufflepuff'
 				        },
 				        {
-				          text: 'Eagle',
+				          text: 'Read a good book',
 				          house: 'Ravenclaw'
 				        },
 				        {
-				          text: 'Snake',
+				          text: 'Get a head start on next week\'s work',
 				          house: 'Slytherin'
 				        }
 				      ]
 				    },
 
 				    { 
-				      text: 'What kind of person do you try to be?',
+				      text: 'What do you value most in a friend?',
 				      answers: [
 				        {
-				          text: 'Brave',
+				          text: 'Integrity',
 				          house: 'Gryffindor'
 				        },
 				        {
-				          text: 'Loyal',
+				          text: 'Loyalty',
 				          house: 'Hufflepuff'
 				        },
 				        {
-				          text: 'Witty',
+				          text: 'Intelligence',
 				          house: 'Ravenclaw'
 				        },
 				        {
-				          text: 'Cunning',
+				          text: 'Prestige',
 				          house: 'Slytherin'
 				        }
 				      ]
 				    },
 
 				    { 
-				      text: 'Who is your favorite witch or wizard?',
+				      text: 'What is your favorite extracurricular activity?',
 				      answers: [
 				        {
-				          text: 'Albus Dumbledore',
+				          text: 'Quidditch',
 				          house: 'Gryffindor'
 				        },
 				        {
-				          text: 'Newt Scamander',
+				          text: 'Frog Choir',
 				          house: 'Hufflepuff'
 				        },
 				        {
-				          text: 'Garrick Ollivander',
+				          text: 'Wizard Chess',
 				          house: 'Ravenclaw'
 				        },
 				        {
-				          text: 'Tom Riddle',
+				          text: 'Dueling Club',
 				          house: 'Slytherin'
 				        }
 				      ]
 				    },
 
 				    { 
-				      text: 'What is your favorite Berty Bott\'s flavor?',
+				      text: 'What is your favorite movie genre?',
 				      answers: [
 				        {
-				          text: 'Grape',
+				          text: 'Thriller',
 				          house: 'Gryffindor'
 				        },
 				        {
-				          text: 'Horseradish',
+				          text: 'Romantic Comedy',
 				          house: 'Hufflepuff'
 				        },
 				        {
-				          text: 'Roast Beef',
+				          text: 'Science Fiction',
 				          house: 'Ravenclaw'
 				        },
 				        {
-				          text: 'Spinach',
+				          text: 'Noir',
 				          house: 'Slytherin'
 				        }
 				      ]
